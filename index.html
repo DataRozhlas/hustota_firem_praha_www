@@ -18,6 +18,10 @@
 		zIndex: 5,
 		opacity: 0.75});
 		
+		var labels = L.tileLayer('https://samizdat.cz/tiles/ton_l1/{z}/{x}/{y}.png', { 
+		maxZoom: 16, 
+		zIndex: 6,
+		opacity: 0.60});
 		
 		var utfGrid = new L.UtfGrid('tiles/{z}/{x}/{y}.grid.json', {
 			useJsonP: false
@@ -42,6 +46,7 @@
 
 		map.setView([50.08427326534489,14.423051878515707], 12)
 			.addLayer(utfGrid)
+			.addLayer(labels)
 			.addLayer(topic)
 			.addControl(info)
 		
