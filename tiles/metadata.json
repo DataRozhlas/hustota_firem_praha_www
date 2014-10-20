@@ -1,0 +1,12 @@
+{
+    "attribution": "", 
+    "description": "", 
+    "center": "14.4656,50.0598,13", 
+    "bounds": "14.2678,49.9417,14.7148,50.1767", 
+    "minzoom": "11", 
+    "version": "1.0.0", 
+    "template": "{{#__location__}}{{/__location__}}{{#__teaser__}}{{{PocetBytu}}} {{{PocetPodla}}} {{{PodlahovaP}}} {{{ZastavenaP}}}  {{{Count_}}} {{{firem_m2}}} {{{adresa}}}{{/__teaser__}}{{#__full__}}{{/__full__}}", 
+    "maxzoom": "16", 
+    "legend": "", 
+    "name": "hustota_firem_praha"
+}

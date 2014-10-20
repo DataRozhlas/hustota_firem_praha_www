@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--Source: http://danzel.github.io/Leaflet.utfgrid/example/map.html//-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script src="https://samizdat.cz/tools/comb/leaflet-0.7.3_utfgrid.cssjs.js"></script>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+	<div id="map"></div>
+	<script>	
+		var map = L.map('map', {
+		minZoom: 11,
+		maxZoom: 16});
+		
+		var topic = L.tileLayer('tiles/{z}/{x}/{y}.png', { 
+		maxZoom: 16, 
+		zIndex: 5,
+		opacity: 0.75});
+		
+		
+		var utfGrid = new L.UtfGrid('tiles/{z}/{x}/{y}.grid.json', {
+			useJsonP: false
+		});
+		
+		utfGrid.on('mouseover', function(e){ info.update(e);}).on('mouseout', function(e){ info.update();})
+
+		var info = L.control();
+		info.options.position = 'bottomright';
+		info.onAdd = function (map) {
+		    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+		    this.update();
+		    return this._div;
+		};
+		
+		info.update = function (props) {
+			this._div.innerHTML = (props ? "<values>V okolí adresy <b>" + props.data.adresa + "</b><br>je registrováno <b>" + props.data.Count_ + "</b> firem."
+			: 'Najetím myši vyberte adresu.');
+		};
+		
+		
+
+		map.setView([50.08427326534489,14.423051878515707], 12)
+			.addLayer(utfGrid)
+			.addLayer(topic)
+			.addControl(info)
+		
+	</script>
+	</body>
+</html>
