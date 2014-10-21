@@ -1,6 +1,6 @@
-#map { 
-height: 430px; 
-width:610px; 
+#map {
+height: 430px;
+width:610px;
 cursor: pointer;
 }
 .info {
@@ -21,4 +21,29 @@ cursor: pointer;
 }
 body {
   margin: 0;
+}
+
+#frm-geocode {
+    position: absolute;
+    top: 360px;
+    left: 10px;
+    background: white;
+    padding: 5px;
+    float: left;
+    border: 2px solid #aaa;
+    -webkit-border-radius: 4px;
+            border-radius: 4px;
+}
+#frm-geocode label {
+    float: left;
+    clear: left;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+}
+#frm-geocode .inputs {
+    float: left;
+    clear: left;
+    padding-top: 3px;
+}
+#frm-geocode input {
+    float: left;
 }
